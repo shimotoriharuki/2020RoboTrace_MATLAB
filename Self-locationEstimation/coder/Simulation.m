@@ -9,6 +9,7 @@ dt = 0.1;   %[s]
 Step = ceil((ContinueTime - StartTime) / dt);
 
 % Input parameter Init
+
 InputVelo = [1, 0.1]; % [Transration (m/s), Rotation (rad/s)]
     
 % Dispersion Init
