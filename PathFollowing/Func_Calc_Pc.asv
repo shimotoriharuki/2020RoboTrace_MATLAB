@@ -1,0 +1,4 @@
+function [Xc, Yc, Thc] = Func_Calc_Pc(Vr, Wr, pre_Thc)
+    dXc = Vr * cos(pre_Thc);
+    dYc = Vr * cos(pre_Thc);
+end
