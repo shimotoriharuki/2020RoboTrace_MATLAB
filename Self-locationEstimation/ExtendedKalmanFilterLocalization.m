@@ -8,7 +8,7 @@ disp('Extended Kalman Filter (EKF) sample program start!!')
 time = 0;
 endtime = 60; % [sec]
 global dt;
-dt = 0.1; % [sec]
+dt = 0.000001; % [sec]
  
 nSteps = ceil((endtime - time)/dt);
  
@@ -70,7 +70,7 @@ for i=1 : nSteps
     S = H*PPred*H' + R;
     K = PPred*H'*inv(S);
     xEst = xPred + K*y;
-    PEst = (eye(size(xEst,1)) - K*H)*PPred;
+    PEst = (eye(size(xEst,1)) - K*H)*PPred
     
     % Simulation Result
     result.time=[result.time; time];
@@ -82,7 +82,7 @@ for i=1 : nSteps
     result.u=[result.u; u'];
     
     %Animation (remove some flames)
-    if rem(i,5)==0
+    if rem(i,1000)==0
         %hold off;
         plot(result.xTrue(:,1),result.xTrue(:,2),'.b');hold on;
         plot(result.z(:,1),result.z(:,2),'.g');hold on;

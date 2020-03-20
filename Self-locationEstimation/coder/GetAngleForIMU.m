@@ -5,4 +5,5 @@ function theta = GetAngleForIMU(PreTh, u) %ジャイロから角度を計算した場合
     global dt
     
     theta = PreTh + (u * dt + normrnd(0, sqrt(Qt)));
+
 end

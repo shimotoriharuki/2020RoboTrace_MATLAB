@@ -7,18 +7,17 @@ clear all
 
 % Simuration Init
 time = 0;
-ContinueTime = 60;  %[s]
+ContinueTime = 6;  %[s]
 global dt;
-dt = 0.1;   %[s]
-Step = ceil((ContinueTime - time)/dt);
+dt = 0.001;   %[s]
+Step = ceil((ContinueTime - time) / dt);
 
 % Machine parameter Init
 global Tred ;
-Tred = 100e-3;  %[m]
-WheelR = 10e-3; %[m] 
+Tred = 126e-3;  %[m]
 
 % Input parameter Init
-Robot_u = [1, 0.1]; %[Transration(m/s), Rotation(m/s)]
+Robot_u = [10, 1]; %[Transration(m/s), Rotation(m/s)]
 input = [0, 0]; %[dS(m), dTh(rad)]
 
 % error parameter Init
@@ -27,8 +26,9 @@ sigma = [0, 0]; %[Transration, Rotation]
 global Rt  %input error
 Rt = [0, 0;
       0, 0];
+  
 global a;
-a = [1, 1, 1, 1]; %[a1, a2, a3, a4]
+a = [10, 10, 10, 10]; %[a1, a2, a3, a4]
 global Qt %observe error
 Qt = 0.5^2;
 
@@ -40,7 +40,7 @@ EstXt = [0, 0, 0];
 PreZt = 0;
 
 % Dispersion init
-ExtPt = [0, 0, 0;
+EstPt = [0, 0, 0;
          0, 0, 0;
          0, 0, 0];
 PrePt = [0, 0, 0;
@@ -57,7 +57,6 @@ Wt = [0, 0;
 
 % Simuration
 for i = 1 : Step
-    time = time + dt;
     
     input = CalcU(Robot_u);
     Rt = CalcRt(a, input);  
@@ -74,22 +73,22 @@ for i = 1 : Step
     At = CalcAt(PreXt, input);
     Wt = CalcWt(PreXt, input);
     
-    EstPt = At * PrePt * At' + Wt * Rt * Wt';
+    PtPred = At * EstPt * At' + Wt * Rt * Wt';
     
     % Update step
     ObsZt = GetIMU(TruePosition);
     Ht = [0, 0, 1];
-    St = Ht * EstPt * Ht' + Qt;
-    Kt = St \ (EstPt * Ht');
+    St = Ht * PtPred * Ht' + Qt;
+    Kt = St \ (PtPred * Ht');
     EstXt = EstXt';
     EstXt = EstXt + Kt * (ObsZt - Ht * EstXt);
-    ExtPt = (eye - Kt * Ht) * EstPt;
-    EstXt = EstXt';
+    EstPt = (eye(size(EstXt,1)) - Kt * Ht) * PtPred
+%     EstXt = EstXt';
     
 %     xlim([-5, 15]);
 %     ylim([0 25]);
     % Animation
-    if rem(i, 10)==0
+    if rem(i, 100)==0
 %         subplot(2, 1, 1)
         plot(TruePosition(:, 1), TruePosition(:, 2),'.blue'); hold on;
         plot(OdoPosition(:, 1), OdoPosition(:, 2),'.black'); hold on;
@@ -103,7 +102,7 @@ for i = 1 : Step
 %     plot(time, Zt, '.blue'); hold on;
         
     PreXt = EstXt;
-    PrePt = ExtPt;
+    PrePt = EstPt;
     PreZt = ObsZt;
 end
 
@@ -117,10 +116,10 @@ end
 function  out = CalcPositionWithError(position, u)
     global sigma;
     
-    u(1) = u(1) + randn() * sigma(1);
-    u(2) = u(2) + randn() * sigma(2);
+    ue(1) = u(1) + randn() * sigma(1);
+    ue(2) = u(2) + randn() * sigma(2);
     
-    out = CalcPosition(position, u);   
+    out = CalcPosition(position, ue);   
 
 end
 

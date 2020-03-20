@@ -5,18 +5,16 @@
 hold off
 clear all
 
-
 % Simuration Init
 time = 0;
 ContinueTime = 60;  %[s]
 global dt;
 dt = 0.1;   %[s]
-Step = ceil((ContinueTime - time)/dt);
+Step = ceil((ContinueTime - time) / dt);
 
 % Machine parameter Init
 global Tred ;
-Tred = 100e-3;  %[m]
-% WheelR = 10e-3; %[m] 
+Tred = 126e-3;  %[m]
 
 % Input parameter Init
 Robot_u = [1, 0.1]; %[Transration, Rotation]
@@ -71,7 +69,7 @@ for i = 1 : Step
     sigma = [Rt(1, 1), Rt(2, 2)];
     
     % Updata true position
-    TruePosition = CalcTruePosition(TruePosition, input);   
+%     TruePosition = CalcTruePosition(TruePosition, input);   
     
     % Updata odometory position (add noise)
     OdoPosition = CalcPositionWithError(OdoPosition, input);
