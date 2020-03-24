@@ -82,7 +82,7 @@ for i = 1 : Step
     Kt = St \ (PtPred * Ht');
     EstXt = EstXt';
     EstXt = EstXt + Kt * (ObsZt - Ht * EstXt);
-    EstPt = (eye(size(EstXt,1)) - Kt * Ht) * PtPred
+    EstPt = (eye(size(EstXt,1)) - Kt * Ht) * PtPred;
 %     EstXt = EstXt';
     
 %     xlim([-5, 15]);
@@ -189,7 +189,7 @@ function theta = GetIMU(position)   %地磁気とかから角度を計算した場合
     global Qt
     TrueTheta = position(3);
     
-    theta = TrueTheta + (randn() * Qt); 
+    theta = TrueTheta + (randn() * Qt)
 end
 
 

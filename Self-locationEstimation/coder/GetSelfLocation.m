@@ -1,5 +1,5 @@
 function [EstPosition, EstPt, ObsZt] = GetSelfLocation(PrePosition, PrePt, PreZt, velo)
-    % Init
+    % --------------------Init------------------%
     global ErrerParameter;
     global Qt;
       
@@ -13,24 +13,41 @@ function [EstPosition, EstPt, ObsZt] = GetSelfLocation(PrePosition, PrePt, PreZt
     
     Ht = [0, 0, 1];
     
-    % Calclation start
-    u = CalcU(velo); % Calclate dS & dTh
-    Rt = CalcRt(ErrerParameter, u); % The process noise covariance matrix
+    %---------------------- Calclation start----------------------------%
+    % Calclate dS & dTh
+    u = CalcU(velo); 
     
-    % Forecast step
-    HatPosition = GetDR_Position(PrePosition, u); % This is including DR error
+    % The process noise covariance matrix
+    Rt = CalcRt(ErrerParameter, u); 
     
+    %----------------------- Forecast step----------------------%
+    % This is including DR error
+    HatPosition = GetDR_Position(PrePosition, u); 
+    
+    % Calclation At & Wt
     At = CalcAt(PrePosition, u);
     Wt = CalcWt(PrePosition, u);
 
-    HatPt = At * PrePt * At' + Wt * Rt * Wt'; % Calclation estmation errors covariance matrix
+    % Calclation estmation errors covariance matrix
+    HatPt = At * PrePt * At' + Wt * Rt * Wt'; 
     
-    % Update step
-    ObsZt = GetAngleForIMU(PreZt, velo(2)); % Get Robot's angle for gyro or geomagnetism
-    St = Ht * HatPt * Ht' + Qt; % Covariance of observation residuals
-    Kt = St \ (HatPt * Ht'); % Calclation Kalman constant
-    HatPosition = HatPosition'; % Transpose matrix
-    EstPosition = HatPosition + Kt * (ObsZt - Ht * HatPosition); % Calclation estimation position
-    EstPt = (eye(size(EstPosition,1)) - Kt * Ht) * HatPt;  % Updata estmation errors covariance matrix
+    %------------ Update step^^^^^^^^^^%
+    % Get Robot's angle for gyro or geomagnetism
+    ObsZt = GetAngleForIMU(PreZt, velo(2)); 
+    
+    % Covariance of observation residuals
+    St = Ht * HatPt * Ht' + Qt; 
+    
+    % Calclation Kalman constant
+    Kt = St \ (HatPt * Ht');
+    
+    % Transpose matrix
+    HatPosition = HatPosition';
+    
+    % Calclation estimation position
+    EstPosition = HatPosition + Kt * (ObsZt - Ht * HatPosition); 
+    
+    % Updata estmation errors covariance matrix
+    EstPt = (eye(size(EstPosition, 1)) - Kt * Ht) * HatPt; 
     
 end

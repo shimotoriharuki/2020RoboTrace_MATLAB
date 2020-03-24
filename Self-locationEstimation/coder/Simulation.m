@@ -3,20 +3,20 @@ clear all
 
 % Init
 StartTime = 0;
-ContinueTime = 360;  %[s]
+ContinueTime = 10;  %[s]
 global dt 
 dt = 0.01;   %[s]
 Step = ceil((ContinueTime - StartTime) / dt);
 
 % Input parameter Init
 
-InputVelo = [1, 0.1]; % [Transration (m/s), Rotation (rad/s)]
+InputVelo = [1, 1]; % [Transration (m/s), Rotation (rad/s)]
     
 % Dispersion Init
 global ErrerParameter;
-ErrerParameter = [0.5, 0.5, 0.5, 0.5]; % Mobile robot related error parameters
+ErrerParameter = [0.0, 0.0, 0.0, 0.0]; % Mobile robot related error parameters
 global Qt;
-Qt = 0.001 ^2; % The measurement noise covariance matrix
+Qt = 1 ^2; % The measurement noise covariance matrix
 
 % Position Init
 TruePosition = [0, 0, 0]; % Robot's true position
@@ -53,7 +53,7 @@ for i = 1 : Step
     PreZt = ObsZt;
     
     % Animation
-    if rem(i, 100)==0
+    if rem(i, 50)==0
         plot(TruePosition(:, 1), TruePosition(:, 2),'.blue'); hold on;
         plot(EstPosition(1), EstPosition(2),'.red'); hold on;
         plot(DR_OnlyPosition(1), DR_OnlyPosition(2),'.black'); hold on;

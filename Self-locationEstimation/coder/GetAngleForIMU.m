@@ -1,4 +1,4 @@
-function theta = GetAngleForIMU(PreTh, u) %ジャイロから角度を計算した場合
+function theta = GetAngleForIMU(PreTh, u) %Calclation angle by gyro
     % This is rewritten to the calclation IMU angle program    
 
     global Qt
