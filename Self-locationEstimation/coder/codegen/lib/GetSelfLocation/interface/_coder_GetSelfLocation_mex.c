@@ -5,7 +5,7 @@
  * File: _coder_GetSelfLocation_mex.c
  *
  * MATLAB Coder version            : 4.2
- * C/C++ source code generated on  : 24-Mar-2020 14:05:57
+ * C/C++ source code generated on  : 24-Mar-2020 17:34:25
  */
 
 /* Include Files */
@@ -14,7 +14,7 @@
 
 /* Function Declarations */
 static void GetSelfLocation_mexFunction(int32_T nlhs, mxArray *plhs[3], int32_T
-  nrhs, const mxArray *prhs[4]);
+  nrhs, const mxArray *prhs[5]);
 
 /* Function Definitions */
 
@@ -22,11 +22,11 @@ static void GetSelfLocation_mexFunction(int32_T nlhs, mxArray *plhs[3], int32_T
  * Arguments    : int32_T nlhs
  *                mxArray *plhs[3]
  *                int32_T nrhs
- *                const mxArray *prhs[4]
+ *                const mxArray *prhs[5]
  * Return Type  : void
  */
 static void GetSelfLocation_mexFunction(int32_T nlhs, mxArray *plhs[3], int32_T
-  nrhs, const mxArray *prhs[4])
+  nrhs, const mxArray *prhs[5])
 {
   const mxArray *outputs[3];
   int32_T b_nlhs;
@@ -38,8 +38,8 @@ static void GetSelfLocation_mexFunction(int32_T nlhs, mxArray *plhs[3], int32_T
   st.tls = emlrtRootTLSGlobal;
 
   /* Check for proper number of arguments. */
-  if (nrhs != 4) {
-    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 4, 4,
+  if (nrhs != 5) {
+    emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:WrongNumberOfInputs", 5, 12, 5, 4,
                         15, "GetSelfLocation");
   }
 

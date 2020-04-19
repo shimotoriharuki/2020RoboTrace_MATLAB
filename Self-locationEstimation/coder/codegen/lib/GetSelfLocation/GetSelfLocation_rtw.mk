@@ -2,7 +2,7 @@
 ## Makefile generated for MATLAB file/project 'GetSelfLocation'. 
 ## 
 ## Makefile     : GetSelfLocation_rtw.mk
-## Generated on : Tue Mar 24 14:06:35 2020
+## Generated on : Tue Mar 24 17:34:31 2020
 ## MATLAB Coder version: 4.2 (R2019a)
 ## 
 ## Build Info:
@@ -225,7 +225,7 @@ DEFINES = $(DEFINES_) $(DEFINES_CUSTOM) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/GetSelfLocation_data.c $(START_DIR)/GetSelfLocation_initialize.c $(START_DIR)/GetSelfLocation_terminate.c $(START_DIR)/GetSelfLocation.c $(START_DIR)/CalcRt.c $(START_DIR)/randn.c $(START_DIR)/eml_randn.c $(START_DIR)/eml_rand.c $(START_DIR)/eml_rand_mcg16807_stateful.c $(START_DIR)/eml_rand_shr3cong_stateful.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/rt_nonfinite.c $(START_DIR)/rtGetNaN.c $(START_DIR)/rtGetInf.c
+SRCS = $(START_DIR)/GetSelfLocation_data.c $(START_DIR)/GetSelfLocation_initialize.c $(START_DIR)/GetSelfLocation_terminate.c $(START_DIR)/GetSelfLocation.c $(START_DIR)/randn.c $(START_DIR)/eml_randn.c $(START_DIR)/eml_rand.c $(START_DIR)/eml_rand_mcg16807_stateful.c $(START_DIR)/eml_rand_shr3cong_stateful.c $(START_DIR)/eml_rand_mt19937ar_stateful.c $(START_DIR)/rt_nonfinite.c $(START_DIR)/rtGetNaN.c $(START_DIR)/rtGetInf.c
 
 ALL_SRCS = $(SRCS)
 
@@ -233,7 +233,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = GetSelfLocation_data.o GetSelfLocation_initialize.o GetSelfLocation_terminate.o GetSelfLocation.o CalcRt.o randn.o eml_randn.o eml_rand.o eml_rand_mcg16807_stateful.o eml_rand_shr3cong_stateful.o eml_rand_mt19937ar_stateful.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
+OBJS = GetSelfLocation_data.o GetSelfLocation_initialize.o GetSelfLocation_terminate.o GetSelfLocation.o randn.o eml_randn.o eml_rand.o eml_rand_mcg16807_stateful.o eml_rand_shr3cong_stateful.o eml_rand_mt19937ar_stateful.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
 
 ALL_OBJS = $(OBJS)
 

@@ -5,7 +5,7 @@
  * File: _coder_GetSelfLocation_api.h
  *
  * MATLAB Coder version            : 4.2
- * C/C++ source code generated on  : 24-Mar-2020 14:05:57
+ * C/C++ source code generated on  : 24-Mar-2020 17:34:25
  */
 
 #ifndef _CODER_GETSELFLOCATION_API_H
@@ -25,8 +25,9 @@ extern emlrtContext emlrtContextGlobal;
 
 /* Function Declarations */
 extern void GetSelfLocation(real_T PrePosition[3], real_T PrePt[9], real_T PreZt,
-  real_T velo[2], real_T EstPosition[3], real_T EstPt[9], real_T *ObsZt);
-extern void GetSelfLocation_api(const mxArray * const prhs[4], int32_T nlhs,
+  real_T velo[2], real_T HatPosition[3], real_T EstPosition[3], real_T EstPt[9],
+  real_T *ObsZt);
+extern void GetSelfLocation_api(const mxArray * const prhs[5], int32_T nlhs,
   const mxArray *plhs[3]);
 extern void GetSelfLocation_atexit(void);
 extern void GetSelfLocation_initialize(void);

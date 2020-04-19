@@ -5,7 +5,7 @@
  * File: main.c
  *
  * MATLAB Coder version            : 4.2
- * C/C++ source code generated on  : 24-Mar-2020 14:05:57
+ * C/C++ source code generated on  : 24-Mar-2020 17:34:25
  */
 
 /*************************************************************************/
@@ -131,9 +131,10 @@ static double argInit_real_T(void)
  */
 static void main_GetSelfLocation(void)
 {
-  double dv0[3];
-  double dv1[9];
-  double dv2[2];
+  double dv1[3];
+  double dv2[9];
+  double dv3[2];
+  double dv4[3];
   double EstPosition[3];
   double EstPt[9];
   double ObsZt;
@@ -142,11 +143,14 @@ static void main_GetSelfLocation(void)
   /* Initialize function input argument 'PrePosition'. */
   /* Initialize function input argument 'PrePt'. */
   /* Initialize function input argument 'velo'. */
+  /* Initialize function input argument 'HatPosition'. */
   /* Call the entry-point 'GetSelfLocation'. */
-  argInit_3x1_real_T(dv0);
-  argInit_3x3_real_T(dv1);
-  argInit_1x2_real_T(dv2);
-  GetSelfLocation(dv0, dv1, argInit_real_T(), dv2, EstPosition, EstPt, &ObsZt);
+  argInit_3x1_real_T(dv1);
+  argInit_3x3_real_T(dv2);
+  argInit_1x2_real_T(dv3);
+  argInit_3x1_real_T(dv4);
+  GetSelfLocation(dv1, dv2, argInit_real_T(), dv3, dv4, EstPosition, EstPt,
+                  &ObsZt);
 }
 
 /*

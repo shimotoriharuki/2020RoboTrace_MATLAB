@@ -3,20 +3,20 @@ clear all
 
 % Init
 StartTime = 0;
-ContinueTime = 10;  %[s]
+ContinueTime = 60;  %[s]
 global dt 
 dt = 0.01;   %[s]
 Step = ceil((ContinueTime - StartTime) / dt);
 
 % Input parameter Init
 
-InputVelo = [1, 1]; % [Transration (m/s), Rotation (rad/s)]
+InputVelo = [1, 0.]; % [Transration (m/s), Rotation (rad/s)]
     
 % Dispersion Init
 global ErrerParameter;
-ErrerParameter = [0.0, 0.0, 0.0, 0.0]; % Mobile robot related error parameters
+ErrerParameter = [1, 0.1, 0.1, 0.1]; % Mobile robot related error parameters
 global Qt;
-Qt = 1 ^2; % The measurement noise covariance matrix
+Qt = 0.0001 ^2; % The measurement noise covariance matrix
 
 % Position Init
 TruePosition = [0, 0, 0]; % Robot's true position
@@ -28,6 +28,8 @@ PreEstPosition = [0, 0, 0];
 DR_OnlyPosition = [0, 0, 0]; % Robot's Dead-Reckoning position
 PreDR_OnlyPosition = [0, 0, 0];
 
+MeaPosition = [0, 0, 0];
+
 EstPt = 0; % Estimation Pt
 PrePt = 0;
 
@@ -35,7 +37,7 @@ ObsZt = 0; % Observed Zt
 PreZt = 0;
 
 global Tred ;
-Tred = 126e-3;  %[m]
+Tred = 100e-3;  %[m]
 
 for i = 1 : Step
     
@@ -44,7 +46,9 @@ for i = 1 : Step
     u = CalcU(InputVelo); % Calclate dS & dTh
     DR_OnlyPosition = GetDR_Position(PreDR_OnlyPosition, u); % Only Dead-Reckoning position
     
-    [EstPosition, EstPt, ObsZt] = GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo); % Estimated position by EKF
+    MeaPosition = GetMeaPosition(PreEstPosition, u); % Measured position
+    
+    [EstPosition, EstPt, ObsZt] = GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo, MeaPosition); % Estimated position by EKF
     
     PreTruePosition = TruePosition;
     PreEstPosition = EstPosition;
@@ -53,7 +57,7 @@ for i = 1 : Step
     PreZt = ObsZt;
     
     % Animation
-    if rem(i, 50)==0
+    if rem(i, 100)==0
         plot(TruePosition(:, 1), TruePosition(:, 2),'.blue'); hold on;
         plot(EstPosition(1), EstPosition(2),'.red'); hold on;
         plot(DR_OnlyPosition(1), DR_OnlyPosition(2),'.black'); hold on;

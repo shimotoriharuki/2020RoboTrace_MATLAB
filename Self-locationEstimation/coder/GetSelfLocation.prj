@@ -1,31 +1,31 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2018b">
-  <configuration build-checksum="2182351391" file="C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.prj" location="C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder" name="GetSelfLocation" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="3929730850" file="C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.prj" location="C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder" name="GetSelfLocation" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
-      <param.BuiltInstrumentedMex />
+      <param.BuiltInstrumentedMex>false</param.BuiltInstrumentedMex>
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
       <param.WorkingFolder>option.WorkingFolder.Project</param.WorkingFolder>
       <param.SpecifiedWorkingFolder />
       <param.BuildFolder>option.BuildFolder.Project</param.BuildFolder>
       <param.SpecifiedBuildFolder />
       <param.SearchPaths />
-      <param.ResponsivenessChecks />
-      <param.ExtrinsicCalls />
-      <param.IntegrityChecks />
+      <param.ResponsivenessChecks>true</param.ResponsivenessChecks>
+      <param.ExtrinsicCalls>true</param.ExtrinsicCalls>
+      <param.IntegrityChecks>true</param.IntegrityChecks>
       <param.SaturateOnIntegerOverflow>true</param.SaturateOnIntegerOverflow>
-      <param.GlobalDataSyncMethod />
+      <param.GlobalDataSyncMethod>option.GlobalDataSyncMethod.SyncAlways</param.GlobalDataSyncMethod>
       <param.EnableVariableSizing>true</param.EnableVariableSizing>
       <param.DynamicMemoryAllocation>option.DynamicMemoryAllocation.Threshold</param.DynamicMemoryAllocation>
       <param.DynamicMemoryAllocationThreshold>65536</param.DynamicMemoryAllocationThreshold>
       <param.RowMajor>option.RowMajor.ColumnMajor</param.RowMajor>
       <param.HighlightPotentialRowMajorIssues>true</param.HighlightPotentialRowMajorIssues>
       <param.PreserveArrayDimensions>false</param.PreserveArrayDimensions>
-      <param.EliminateSingleDimensions />
+      <param.EliminateSingleDimensions>false</param.EliminateSingleDimensions>
       <param.StackUsageMax>200000</param.StackUsageMax>
       <param.FilePartitionMethod>option.FilePartitionMethod.MapMFileToCFile</param.FilePartitionMethod>
       <param.GenerateComments>true</param.GenerateComments>
       <param.MATLABSourceComments>false</param.MATLABSourceComments>
       <param.ReservedNameArray />
-      <param.EnableDebugging />
+      <param.EnableDebugging>false</param.EnableDebugging>
       <param.ReportPotentialDifferences>false</param.ReportPotentialDifferences>
       <param.GenerateReport>true</param.GenerateReport>
       <param.LaunchReport>false</param.LaunchReport>
@@ -35,7 +35,7 @@
       <param.VerificationMode>option.VerificationMode.None</param.VerificationMode>
       <param.VerificationStatus>option.VerificationStatus.Passed</param.VerificationStatus>
       <param.EnableMexProfiling>false</param.EnableMexProfiling>
-      <var.BuiltWithMexProfiling />
+      <var.BuiltWithMexProfiling>false</var.BuiltWithMexProfiling>
       <param.CustomSourceCode>/* Author: SHIMOTORI, Haruki */</param.CustomSourceCode>
       <param.CustomHeaderCode />
       <param.CustomInitializer />
@@ -44,12 +44,12 @@
       <param.CustomSource />
       <param.CustomLibrary />
       <param.PostCodeGenCommand />
-      <param.mex.GenCodeOnly />
+      <param.mex.GenCodeOnly>false</param.mex.GenCodeOnly>
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
       <param.CompileTimeRecursionLimit>50</param.CompileTimeRecursionLimit>
       <param.EnableRuntimeRecursion>true</param.EnableRuntimeRecursion>
       <param.PreserveVariableNames>option.PreserveVariableNames.None</param.PreserveVariableNames>
-      <param.EchoExpressions />
+      <param.EchoExpressions>true</param.EchoExpressions>
       <param.InlineThreshold>10</param.InlineThreshold>
       <param.InlineThresholdMax>200</param.InlineThresholdMax>
       <param.InlineStackLimit>4000</param.InlineStackLimit>
@@ -57,11 +57,11 @@
       <param.MemcpyThreshold>64</param.MemcpyThreshold>
       <param.EnableOpenMP>true</param.EnableOpenMP>
       <param.InitFltsAndDblsToZero>true</param.InitFltsAndDblsToZero>
-      <param.ConstantInputs />
+      <param.ConstantInputs>option.ConstantInputs.CheckValues</param.ConstantInputs>
       <param.EnableCRICodeCoverage>true</param.EnableCRICodeCoverage>
       <param.EnableJIT>false</param.EnableJIT>
-      <param.EnableJITSilentBailOut />
-      <param.CheckForIssuesJIT />
+      <param.EnableJITSilentBailOut>false</param.EnableJITSilentBailOut>
+      <param.CheckForIssuesJIT>true</param.CheckForIssuesJIT>
       <unset>
         <param.BuiltInstrumentedMex />
         <param.RanInstrumentedMex />
@@ -141,12 +141,12 @@
       <param.RowMajor>option.RowMajor.ColumnMajor</param.RowMajor>
       <param.HighlightPotentialRowMajorIssues>true</param.HighlightPotentialRowMajorIssues>
       <param.PreserveArrayDimensions>false</param.PreserveArrayDimensions>
-      <param.EliminateSingleDimensions />
+      <param.EliminateSingleDimensions>false</param.EliminateSingleDimensions>
       <param.StackUsageMax>200000</param.StackUsageMax>
       <param.MultiInstanceCode>false</param.MultiInstanceCode>
       <param.FilePartitionMethod>option.FilePartitionMethod.MapMFileToCFile</param.FilePartitionMethod>
       <param.GenerateComments>true</param.GenerateComments>
-      <param.CommentStyle>option.CommentStyle.Multi-line</param.CommentStyle>
+      <param.CommentStyle>option.CommentStyle.Auto</param.CommentStyle>
       <param.MATLABSourceComments>false</param.MATLABSourceComments>
       <param.MATLABFcnDesc>true</param.MATLABFcnDesc>
       <param.ConvertIfToSwitch>false</param.ConvertIfToSwitch>
@@ -196,7 +196,7 @@
       <param.RanPilSilVerification>false</param.RanPilSilVerification>
       <param.VerificationMode>option.VerificationMode.None</param.VerificationMode>
       <param.VerificationStatus>option.VerificationStatus.Inactive</param.VerificationStatus>
-      <param.CustomSourceCode />
+      <param.CustomSourceCode>/* Author: SHIMOTORI, Haruki */</param.CustomSourceCode>
       <param.CustomHeaderCode />
       <param.CustomInitializer />
       <param.CustomTerminator />
@@ -217,7 +217,7 @@
       <param.target.ActiveTarget>ARM Cortex-M3 (QEMU)</param.target.ActiveTarget>
       <param.HardwareVendor.Production>ARM Compatible</param.HardwareVendor.Production>
       <param.HardwareType.Production>ARM Cortex</param.HardwareType.Production>
-      <param.HWDeviceType.Production />
+      <param.HWDeviceType.Production>ARM Compatible-&gt;ARM Cortex</param.HWDeviceType.Production>
       <var.instance.enabled.Production>true</var.instance.enabled.Production>
       <param.HardwareSizeChar.Production>8</param.HardwareSizeChar.Production>
       <param.HardwareSizeShort.Production>16</param.HardwareSizeShort.Production>
@@ -238,7 +238,7 @@
       <param.HardwareDivisionRounding.Production>option.HardwareDivisionRounding.Zero</param.HardwareDivisionRounding.Production>
       <param.HardwareVendor.Target>ARM Compatible</param.HardwareVendor.Target>
       <param.HardwareType.Target>ARM Cortex</param.HardwareType.Target>
-      <param.HWDeviceType.Target />
+      <param.HWDeviceType.Target>ARM Compatible-&gt;ARM Cortex</param.HWDeviceType.Target>
       <var.instance.enabled.Target>false</var.instance.enabled.Target>
       <param.HardwareSizeChar.Target>8</param.HardwareSizeChar.Target>
       <param.HardwareSizeShort.Target>16</param.HardwareSizeShort.Target>
@@ -290,14 +290,14 @@
       <param.GenerateDefaultInSwitch>false</param.GenerateDefaultInSwitch>
       <param.EnableTraceability>true</param.EnableTraceability>
       <param.UseECoderFeatures>true</param.UseECoderFeatures>
-      <param.psCustomPrjState />
+      <param.psCustomPrjState>false</param.psCustomPrjState>
       <param.psCustomProjectFile />
-      <param.psCheckConfValue />
-      <param.psUniqueOutPutState />
-      <param.psOpenResultsState />
-      <param.psProductModeValue />
-      <param.psQuickConfValue />
-      <param.psOutputFolder />
+      <param.psCheckConfValue>option.psCheckConfValue.onWarnCheckConfDlg</param.psCheckConfValue>
+      <param.psUniqueOutPutState>true</param.psUniqueOutPutState>
+      <param.psOpenResultsState>true</param.psOpenResultsState>
+      <param.psProductModeValue>option.psProductModeValue.codeProver</param.psProductModeValue>
+      <param.psQuickConfValue>option.psQuickConfValue.proj</param.psQuickConfValue>
+      <param.psOutputFolder>results_$codegenName$</param.psOutputFolder>
       <unset>
         <param.WorkingFolder />
         <param.SpecifiedWorkingFolder />
@@ -368,7 +368,6 @@
         <param.RanPilSilVerification />
         <param.VerificationMode />
         <param.VerificationStatus />
-        <param.CustomSourceCode />
         <param.CustomHeaderCode />
         <param.CustomInitializer />
         <param.CustomTerminator />
@@ -801,15 +800,15 @@
       </unset>
     </profile>
     <param.objective>option.objective.c</param.objective>
-    <param.WorkflowStep>generateCode</param.WorkflowStep>
+    <param.WorkflowStep>workflowSummary</param.WorkflowStep>
     <param.TestSnippets>
-      <item>GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo)</item>
+      <item>GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo, MeaPosition)</item>
     </param.TestSnippets>
-    <param.DefaultImportExportVariable />
-    <param.ExternalFcnMajority />
+    <param.DefaultImportExportVariable>config</param.DefaultImportExportVariable>
+    <param.ExternalFcnMajority>column</param.ExternalFcnMajority>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
     <param.outputfile>${PROJECT_ROOT}\codegen\lib\GetSelfLocation\GetSelfLocation.lib</param.outputfile>
-    <param.version />
+    <param.version>R2012a</param.version>
     <param.HasECoderFeatures>true</param.HasECoderFeatures>
     <param.HasGpuCoder>false</param.HasGpuCoder>
     <var.HasNeuralNetworkToolbox>false</var.HasNeuralNetworkToolbox>
@@ -817,13 +816,13 @@
     <param.grt.mainhtml />
     <param.CallGeneratedCodeFromTest>true</param.CallGeneratedCodeFromTest>
     <param.AutoInferDefaultFile />
-    <param.AutoInferUseVariableSize />
-    <param.AutoInferUseUnboundedSize />
-    <param.AutoInferVariableSizeThreshold />
-    <param.AutoInferUnboundedSizeThreshold />
-    <param.EnableFixedPointStep />
+    <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
+    <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
+    <param.AutoInferVariableSizeThreshold>1024</param.AutoInferVariableSizeThreshold>
+    <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>3159309257</param.AnnotationChecksum>
+    <param.AnnotationChecksum>1698828965</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
@@ -832,15 +831,15 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\lib\GetSelfLocation</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>C_CODE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>2504598875</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>1746925999</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot>codegen\mex\GetSelfLocation</var.cfi.lastOutputRoot>
-    <var.cfi.preBuildChecksum>1610385110</var.cfi.preBuildChecksum>
-    <var.lastCfiTestSnippet>GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo)</var.lastCfiTestSnippet>
-    <var.outdatedOnRestore />
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcAt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcPosition.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcRt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcWt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetAngleForIMU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetDR_Position.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;3167038003&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
-    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcAt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcPosition.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcRt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcWt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetAngleForIMU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetDR_Position.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
+    <var.cfi.preBuildChecksum>1609671384</var.cfi.preBuildChecksum>
+    <var.lastCfiTestSnippet>GetSelfLocation(PreEstPosition, PrePt, PreZt, InputVelo, MeaPosition)</var.lastCfiTestSnippet>
+    <var.outdatedOnRestore>false</var.outdatedOnRestore>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcAt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcRt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcWt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetAngleForIMU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;1147841088&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcAt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcRt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\CalcWt.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetAngleForIMU.m&lt;/file&gt;&lt;file&gt;C:\Users\robot\Documents\MATLAB\2020_RoboTrace\Self-locationEstimation\coder\GetSelfLocation.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
-    <param.NoDefaultJIT />
+    <param.NoDefaultJIT>false</param.NoDefaultJIT>
     <param.configImportActive>false</param.configImportActive>
     <var.isGpuCoder>false</var.isGpuCoder>
     <var.notGpuCoder>true</var.notGpuCoder>
@@ -851,15 +850,15 @@
     <param.outputfile>${PROJECT_ROOT}\codegen\lib\GetSelfLocation\GetSelfLocation.lib</param.outputfile>
     <param.gpu.Enabled>false</param.gpu.Enabled>
     <param.gpu.KernelNamePrefix />
-    <param.gpu.SelectCudaDevice />
+    <param.gpu.SelectCudaDevice>-1</param.gpu.SelectCudaDevice>
     <param.gpu.MallocMode />
-    <param.gpu.MallocThreshold />
-    <param.gpu.StackLimitPerThread />
+    <param.gpu.MallocThreshold>200</param.gpu.MallocThreshold>
+    <param.gpu.StackLimitPerThread>1024</param.gpu.StackLimitPerThread>
     <param.gpu.EnableCUBLAS>false</param.gpu.EnableCUBLAS>
     <param.gpu.EnableCUSOLVER>false</param.gpu.EnableCUSOLVER>
     <param.gpu.EnableCUFFT>false</param.gpu.EnableCUFFT>
     <param.gpu.Benchmarking>false</param.gpu.Benchmarking>
-    <param.gpu.SafeBuild />
+    <param.gpu.SafeBuild>false</param.gpu.SafeBuild>
     <param.gpu.ComputeCapability />
     <param.gpu.CustomComputeCapability />
     <param.gpu.CompilerFlags />
@@ -870,32 +869,32 @@
     <var.cfiTargetLibSuppression>false</var.cfiTargetLibSuppression>
     <var.hasMatlabDeepLearningSupportPackage>true</var.hasMatlabDeepLearningSupportPackage>
     <var.hasGpuDeepLearningSupportPackage>true</var.hasGpuDeepLearningSupportPackage>
-    <param.tensorrt.DataType />
+    <param.tensorrt.DataType>option.tensorrt.datatype.fp32</param.tensorrt.DataType>
     <param.tensorrt.DataPath />
-    <param.tensorrt.NumCalibrationBatches />
-    <param.cudnn.AutoTuning />
-    <param.cudnn.DataType />
-    <param.arm-compute.ArmComputeVersion />
-    <param.arm-compute.ArmArchitecture />
+    <param.tensorrt.NumCalibrationBatches>1</param.tensorrt.NumCalibrationBatches>
+    <param.cudnn.AutoTuning>true</param.cudnn.AutoTuning>
+    <param.cudnn.DataType>option.cudnn.datatype.fp32</param.cudnn.DataType>
+    <param.arm-compute.ArmComputeVersion>option.arm-compute.version.18_05</param.arm-compute.ArmComputeVersion>
+    <param.arm-compute.ArmArchitecture>option.arm-compute.architecture.unspecified</param.arm-compute.ArmArchitecture>
     <param.TargetLang>option.TargetLang.C</param.TargetLang>
     <param.EnableAutoExtrinsicCalls>true</param.EnableAutoExtrinsicCalls>
     <param.UsePreconditions>false</param.UsePreconditions>
     <param.FeatureFlags />
     <param.FixedPointMode>option.FixedPointMode.None</param.FixedPointMode>
-    <param.AutoScaleLoopIndexVariables />
+    <param.AutoScaleLoopIndexVariables>false</param.AutoScaleLoopIndexVariables>
     <param.ComputedFixedPointData />
     <param.UserFixedPointData />
-    <param.DefaultWordLength />
-    <param.DefaultFractionLength />
-    <param.FixedPointSafetyMargin />
-    <param.FixedPointFimath />
-    <param.FixedPointTypeSource />
+    <param.DefaultWordLength>16</param.DefaultWordLength>
+    <param.DefaultFractionLength>4</param.DefaultFractionLength>
+    <param.FixedPointSafetyMargin>0</param.FixedPointSafetyMargin>
+    <param.FixedPointFimath>fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128)</param.FixedPointFimath>
+    <param.FixedPointTypeSource>option.FixedPointTypeSource.SimAndDerived</param.FixedPointTypeSource>
     <param.StaticAnalysisTimeout />
-    <param.StaticAnalysisGlobalRangesOnly />
-    <param.LogAllIOValues />
-    <param.DetectOverflows />
-    <param.LogHistogram />
-    <param.ShowCoverage />
+    <param.StaticAnalysisGlobalRangesOnly>false</param.StaticAnalysisGlobalRangesOnly>
+    <param.LogAllIOValues>false</param.LogAllIOValues>
+    <param.DetectOverflows>false</param.DetectOverflows>
+    <param.LogHistogram>false</param.LogHistogram>
+    <param.ShowCoverage>true</param.ShowCoverage>
     <param.ExcludedFixedPointVerificationFiles />
     <param.ExcludedFixedPointSimulationFiles />
     <param.InstrumentedBuildChecksum />
@@ -904,16 +903,16 @@
     <param.FixedPointValidationChecksum />
     <param.FixedPointSourceCodeChecksum />
     <param.FixedPointFunctionReplacements />
-    <param.OptimizeWholeNumbers />
-    <param.ContainerTypes />
+    <param.OptimizeWholeNumbers>true</param.OptimizeWholeNumbers>
+    <param.ContainerTypes>false</param.ContainerTypes>
     <param.GeneratedFixedPointFileSuffix>_fixpt</param.GeneratedFixedPointFileSuffix>
     <param.PlotFunction />
-    <param.SDIPlot />
-    <param.EnableCodeEfficiencyChecks />
-    <param.DefaultFixedPointSignedness />
-    <param.FixedPointTypeProposalMode />
-    <param.EnableFixedPointStep />
-    <var.lastFixedPointAction />
+    <param.SDIPlot>false</param.SDIPlot>
+    <param.EnableCodeEfficiencyChecks>false</param.EnableCodeEfficiencyChecks>
+    <param.DefaultFixedPointSignedness>option.DefaultFixedPointSignedness.Automatic</param.DefaultFixedPointSignedness>
+    <param.FixedPointTypeProposalMode>option.FixedPointTypeProposalMode.ProposeFractionLengths</param.FixedPointTypeProposalMode>
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
+    <var.lastFixedPointAction>option.fixedPointAction.none</var.lastFixedPointAction>
     <var.lastSimContext />
     <var.lastVerifyContext />
     <param.fpDataRoot />
@@ -921,9 +920,9 @@
     <var.snapshotChecksum />
     <param.fpLastConvertChecksum />
     <var.functionBlockSid />
-    <param.fptSignedness />
-    <var.FixedPointAnalysisMode />
-    <param.FixedPointUseDesignRanges />
+    <param.fptSignedness>false</param.fptSignedness>
+    <var.FixedPointAnalysisMode>option.FixedPointAnalysisMode.Sim</var.FixedPointAnalysisMode>
+    <param.FixedPointUseDesignRanges>false</param.FixedPointUseDesignRanges>
     <unset>
       <param.objective />
       <param.DefaultImportExportVariable />
@@ -1035,7 +1034,7 @@
     </unset>
     <fileset.entrypoints>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\GetSelfLocation.m">
-        <Marker>1584420507748</Marker>
+        <Marker>1585038721217</Marker>
       </file>
     </fileset.entrypoints>
     <fileset.testbench />
@@ -1046,6 +1045,7 @@
           <Input Name="PrePt" typeId="1" />
           <Input Name="PreZt" typeId="2" />
           <Input Name="velo" typeId="3" />
+          <Input Name="HatPosition" typeId="4" />
           <idpTable>
             <type typeId="0">
               <Class>double</Class>
@@ -1077,6 +1077,15 @@
             <type typeId="3">
               <Class>double</Class>
               <Size>1 x 2</Size>
+              <Value />
+              <InitialValue />
+              <UserDefined>false</UserDefined>
+              <Complex>false</Complex>
+              <Sparse>false</Sparse>
+            </type>
+            <type typeId="4">
+              <Class>double</Class>
+              <Size>1 x 3</Size>
               <Value />
               <InitialValue />
               <UserDefined>false</UserDefined>

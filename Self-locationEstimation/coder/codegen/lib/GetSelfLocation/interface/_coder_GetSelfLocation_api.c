@@ -5,7 +5,7 @@
  * File: _coder_GetSelfLocation_api.c
  *
  * MATLAB Coder version            : 4.2
- * C/C++ source code generated on  : 24-Mar-2020 14:05:57
+ * C/C++ source code generated on  : 24-Mar-2020 17:34:25
  */
 
 /* Include Files */
@@ -60,16 +60,22 @@ static real_T (*i_emlrt_marshallIn(const emlrtStack *sp, const mxArray *velo,
   const char_T *identifier))[2];
 static real_T (*j_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId))[2];
-static void k_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+static real_T (*k_emlrt_marshallIn(const emlrtStack *sp, const mxArray
+  *HatPosition, const char_T *identifier))[3];
+static real_T (*l_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
+  emlrtMsgIdentifier *parentId))[3];
+static void m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId, real_T ret[4]);
-static real_T l_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+static real_T n_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId);
-static real_T (*m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
-  const emlrtMsgIdentifier *msgId))[3];
-static real_T (*n_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
-  const emlrtMsgIdentifier *msgId))[9];
 static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+  const emlrtMsgIdentifier *msgId))[3];
+static real_T (*p_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+  const emlrtMsgIdentifier *msgId))[9];
+static real_T (*q_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   const emlrtMsgIdentifier *msgId))[2];
+static real_T (*r_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+  const emlrtMsgIdentifier *msgId))[3];
 
 /* Function Definitions */
 
@@ -95,7 +101,7 @@ static void GetSelfLocation_once(void)
 static void b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId, real_T y[4])
 {
-  k_emlrt_marshallIn(sp, emlrtAlias(u), parentId, y);
+  m_emlrt_marshallIn(sp, emlrtAlias(u), parentId, y);
   emlrtDestroyArray(&u);
 }
 
@@ -162,7 +168,7 @@ static real_T d_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId)
 {
   real_T y;
-  y = l_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
+  y = n_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
   emlrtDestroyArray(&u);
   return y;
 }
@@ -255,7 +261,7 @@ static real_T (*f_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId))[3]
 {
   real_T (*y)[3];
-  y = m_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
+  y = o_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
   emlrtDestroyArray(&u);
   return y;
 }
@@ -288,7 +294,7 @@ static real_T (*h_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId))[9]
 {
   real_T (*y)[9];
-  y = n_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
+  y = p_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
   emlrtDestroyArray(&u);
   return y;
 }
@@ -321,7 +327,40 @@ static real_T (*j_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId))[2]
 {
   real_T (*y)[2];
-  y = o_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
+  y = q_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
+  emlrtDestroyArray(&u);
+  return y;
+}
+/*
+ * Arguments    : const emlrtStack *sp
+ *                const mxArray *HatPosition
+ *                const char_T *identifier
+ * Return Type  : real_T (*)[3]
+ */
+  static real_T (*k_emlrt_marshallIn(const emlrtStack *sp, const mxArray
+  *HatPosition, const char_T *identifier))[3]
+{
+  real_T (*y)[3];
+  emlrtMsgIdentifier thisId;
+  thisId.fIdentifier = (const char *)identifier;
+  thisId.fParent = NULL;
+  thisId.bParentIsCell = false;
+  y = l_emlrt_marshallIn(sp, emlrtAlias(HatPosition), &thisId);
+  emlrtDestroyArray(&HatPosition);
+  return y;
+}
+
+/*
+ * Arguments    : const emlrtStack *sp
+ *                const mxArray *u
+ *                const emlrtMsgIdentifier *parentId
+ * Return Type  : real_T (*)[3]
+ */
+static real_T (*l_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
+  emlrtMsgIdentifier *parentId))[3]
+{
+  real_T (*y)[3];
+  y = r_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
   emlrtDestroyArray(&u);
   return y;
 }
@@ -332,7 +371,7 @@ static real_T (*j_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
  *                real_T ret[4]
  * Return Type  : void
  */
-  static void k_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+  static void m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId, real_T ret[4])
 {
   static const int32_T dims[2] = { 1, 4 };
@@ -353,7 +392,7 @@ static real_T (*j_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
  *                const emlrtMsgIdentifier *msgId
  * Return Type  : real_T
  */
-static real_T l_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+static real_T n_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId)
 {
   real_T ret;
@@ -370,7 +409,7 @@ static real_T l_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
  *                const emlrtMsgIdentifier *msgId
  * Return Type  : real_T (*)[3]
  */
-static real_T (*m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   const emlrtMsgIdentifier *msgId))[3]
 {
   real_T (*ret)[3];
@@ -387,7 +426,7 @@ static real_T (*m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
  *                const emlrtMsgIdentifier *msgId
  * Return Type  : real_T (*)[9]
  */
-  static real_T (*n_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+  static real_T (*p_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   const emlrtMsgIdentifier *msgId))[9]
 {
   real_T (*ret)[9];
@@ -405,7 +444,7 @@ static real_T (*m_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
  *                const emlrtMsgIdentifier *msgId
  * Return Type  : real_T (*)[2]
  */
-static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+static real_T (*q_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   const emlrtMsgIdentifier *msgId))[2]
 {
   real_T (*ret)[2];
@@ -417,12 +456,30 @@ static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   return ret;
 }
 /*
- * Arguments    : const mxArray * const prhs[4]
+ * Arguments    : const emlrtStack *sp
+ *                const mxArray *src
+ *                const emlrtMsgIdentifier *msgId
+ * Return Type  : real_T (*)[3]
+ */
+  static real_T (*r_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
+  const emlrtMsgIdentifier *msgId))[3]
+{
+  real_T (*ret)[3];
+  static const int32_T dims[2] = { 1, 3 };
+
+  emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 2U, dims);
+  ret = (real_T (*)[3])emlrtMxGetData(src);
+  emlrtDestroyArray(&src);
+  return ret;
+}
+
+/*
+ * Arguments    : const mxArray * const prhs[5]
  *                int32_T nlhs
  *                const mxArray *plhs[3]
  * Return Type  : void
  */
-  void GetSelfLocation_api(const mxArray * const prhs[4], int32_T nlhs, const
+void GetSelfLocation_api(const mxArray * const prhs[5], int32_T nlhs, const
   mxArray *plhs[3])
 {
   real_T (*EstPosition)[3];
@@ -431,6 +488,7 @@ static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   real_T (*PrePt)[9];
   real_T PreZt;
   real_T (*velo)[2];
+  real_T (*HatPosition)[3];
   real_T ObsZt;
   emlrtStack st = { NULL,              /* site */
     NULL,                              /* tls */
@@ -446,13 +504,14 @@ static real_T (*o_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
   PrePt = g_emlrt_marshallIn(&st, emlrtAlias(prhs[1]), "PrePt");
   PreZt = c_emlrt_marshallIn(&st, emlrtAliasP(prhs[2]), "PreZt");
   velo = i_emlrt_marshallIn(&st, emlrtAlias(prhs[3]), "velo");
+  HatPosition = k_emlrt_marshallIn(&st, emlrtAlias(prhs[4]), "HatPosition");
 
   /* Marshall in global variables */
   MEXGlobalSyncInFunction(&st);
 
   /* Invoke the target function */
-  GetSelfLocation(*PrePosition, *PrePt, PreZt, *velo, *EstPosition, *EstPt,
-                  &ObsZt);
+  GetSelfLocation(*PrePosition, *PrePt, PreZt, *velo, *HatPosition, *EstPosition,
+                  *EstPt, &ObsZt);
 
   /* Marshall out global variables */
   MEXGlobalSyncOutFunction(true);

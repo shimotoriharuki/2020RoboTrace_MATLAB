@@ -1,4 +1,4 @@
-function [EstPosition, EstPt, ObsZt] = GetSelfLocation(PrePosition, PrePt, PreZt, velo)
+function [EstPosition, EstPt, ObsZt] = GetSelfLocation(PrePosition, PrePt, PreZt, velo, HatPosition)
     % --------------------Init------------------%
     global ErrerParameter;
     global Qt;
@@ -21,9 +21,6 @@ function [EstPosition, EstPt, ObsZt] = GetSelfLocation(PrePosition, PrePt, PreZt
     Rt = CalcRt(ErrerParameter, u); 
     
     %----------------------- Forecast step----------------------%
-    % This is including DR error
-    HatPosition = GetDR_Position(PrePosition, u); 
-    
     % Calclation At & Wt
     At = CalcAt(PrePosition, u);
     Wt = CalcWt(PrePosition, u);
