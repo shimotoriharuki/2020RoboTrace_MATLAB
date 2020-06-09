@@ -1,0 +1,92 @@
+function [path, error] = GetShortcutPath(position, flag, expansionLength, oneGridScale, numNodes, connectionDistance)
+    positionNum = numel(position(:, 1));
+    
+    %----------グリッドマップ初期化-----------%
+    MaxPositions = max(position);
+    MinPositions = min(position);
+    MaxPosition = ceil(MaxPositions);   % 正に丸める
+    MinPosition = floor(MinPositions);  % 負に丸める
+
+    MapElements_x = (MaxPosition(1) - MinPosition(1)); % [cm]
+    MapElements_y = (MaxPosition(2) - MinPosition(2)); % [cm]
+    GridMap = ones(MapElements_y, MapElements_x); % 1マス1[cm]のグリッドマップ　
+    saveGridMap = ones(MapElements_y, MapElements_x); % figureで表示するためだけのマップ。実際は必要ない
+
+
+    GridMapOrigine = [position(1, 1) + abs(MinPosition(1)), position(1, 2) + abs(MinPosition(2))];
+    %xとyを丸めてマップ外になってしまったときに修正
+    if GridMapOrigine(1, 1) <= 1
+        GridMapOrigine(1, 1) = 1;
+    elseif GridMapOrigine(1, 1) >= MapElements_x
+        GridMapOrigine(1, 1) = MapElements_x;
+    end
+    if GridMapOrigine(1, 2) <= 1
+        GridMapOrigine(1, 2) = 1;
+    elseif GridMapOrigine(1, 2) >= MapElements_y
+        GridMapOrigine(1, 2) = MapElements_y;
+    end
+    
+    ExpansionHalf = ceil(expansionLength / 2);
+    startLocation = GridMapOrigine;
+%     startLocation = [position(1, 1) + abs(MinPosition(1)), position(1, 2) + abs(MinPosition(2))]; % 丸めていない生のポジション
+    shortcutPath = NaN(positionNum, 2);
+    shortcutPath(1, :) = startLocation / oneGridScale; 
+    ignoreFlag = 0;
+    PathNum = 1;
+    %------生の位置データをグリッドマップに変換-----------%
+    for i = 1 : positionNum 
+        % 各位置を四捨五入して整数にする
+        x = ceil(position(i, 1)) + abs(MinPosition(1)); % 生データをグリッド座標に写すためにオフセットする
+        y = ceil(position(i, 2)) + abs(MinPosition(2));
+        %xとyを丸めてマップ外になってしまったときに修正
+        if x <= 1
+            x = 1;
+        elseif x >= MapElements_x
+            x = MapElements_x;
+        end
+        if y <= 1
+            y = 1;
+        elseif y >= MapElements_y
+            y = MapElements_y;
+        end
+
+        % 白線を膨張させる
+        for j = 1 : expansionLength + 1
+            Yref = MapElements_y - (y - (ExpansionHalf + 1)  + j); %行列は左上から数えられてしまうので左下からに変換
+
+            if Yref >= 1 && Yref <= MapElements_y
+                for k = 1 : expansionLength + 1
+                    Xref = x - (ExpansionHalf + 1)  + k; 
+                    if Xref >= 1 && Xref <= MapElements_x
+                        GridMap(Yref, Xref) = 0;
+                        saveGridMap(Yref, Xref) = 0;
+                    end
+                end
+            end
+
+        end
+
+        % 最短経路を探す
+        if (ignoreFlag == 1 && flag(i) == 0) || i >= positionNum % 一回交差したら交差しなくなるか終わるまで処理を無視 
+            ignoreFlag = 0;
+        end
+        if  ignoreFlag == 0 && flag(i) == 1  || i >= positionNum % 交差したか終わったら最短経路を探す
+            endLocation = [position(i, 1) + abs(MinPosition(1)), position(i, 2) + abs(MinPosition(2))]; % 丸めていない生のポジション
+            BinaryMap = binaryOccupancyMap(GridMap, oneGridScale);
+            [tempPath, error] = GetPath(BinaryMap, startLocation/oneGridScale, endLocation/oneGridScale, numNodes, connectionDistance);
+           
+            for n = 1 : numel(tempPath(:, 1))
+                shortcutPath(PathNum, :) = tempPath(n, :);
+                PathNum = PathNum + 1;
+            end
+            startLocation = endLocation;
+            ignoreFlag = 1;
+            
+            GridMap = ones(MapElements_y, MapElements_x); % 1マス10[mm]のグリッドマップ　    
+        end
+    end
+    
+    shortcutPath = rmmissing(shortcutPath); %NuNを削除
+    path = shortcutPath;
+    
+end
