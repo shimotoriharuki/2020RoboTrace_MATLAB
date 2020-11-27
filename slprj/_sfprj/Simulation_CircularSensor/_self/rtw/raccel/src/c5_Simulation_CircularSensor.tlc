@@ -1,0 +1,48 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   4 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c5_Simulation_CircularSensor"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c5_Simulation_CircularSensor"\
+      Path         "is_active_c5_Simulation_CircularSensor"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_c5_Simulation_CircularSensor"\
+      Description  "StateActiveChild"\
+      SFName       "is_c5_Simulation_CircularSensor"\
+      Path         "is_c5_Simulation_CircularSensor"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "flag"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "flag"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
