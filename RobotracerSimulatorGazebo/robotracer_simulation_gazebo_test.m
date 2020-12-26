@@ -1,15 +1,17 @@
 %% ROS init
 clear
 rosshutdown;
-rosinit("192.168.0.30", 11311);
+% rosinit("192.168.0.30", 11311);
+rosinit("192.168.0.58", 11311);
+
 
 %% メッセージを作成する
 cmd_vel_pub = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
 cmd_vel_msg = rosmessage(cmd_vel_pub);
 
 %% メッセージをパプリッシュする
-cmd_vel_msg.Linear.X = 1.0;
-cmd_vel_msg.Angular.Z = 1.0;
+cmd_vel_msg.Linear.X = 1.;
+cmd_vel_msg.Angular.Z = 1.;
 
 send(cmd_vel_pub, cmd_vel_msg);
 
@@ -19,7 +21,7 @@ close all
 %global tftree 
 poses = 0;
 
-odom_sub = rossubscriber('/odom', {@odomCallback, poses});
+odom_sub = rossubscriber('/odom', @odomCallback);
 %odom_tf = rossubscriber('/tf', @tfCallback);
 pause(1);
 
@@ -44,7 +46,8 @@ send(cmd_vel_pub, cmd_vel_msg);
 rosshutdown
 
 %% call back functions
-function odomCallback(poses, message)
+function odomCallback(~, message)
+
     poses.x = message.Pose.Pose.Position.X;
     poses.y = message.Pose.Pose.Position.Y;
     poses.z = message.Pose.Pose.Position.Z;

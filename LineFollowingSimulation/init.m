@@ -1,5 +1,5 @@
 global Tvelo;
-Tvelo = 1; %[m/s]
+Tvelo = 0.1; %[m/s]
 
 global scale;
 

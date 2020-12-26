@@ -111,7 +111,7 @@ static TARGET_CONST rtwCAPI_ElementMap rtElementMap [ ] = { { ( NULL ) , 0 ,
 rtwCAPI_SCALAR , 0 , 2 , 0 } , { rtwCAPI_MATRIX_COL_MAJOR , 2 , 2 , 0 } , {
 rtwCAPI_MATRIX_COL_MAJOR , 4 , 2 , 1 } } ; static const uint_T
 rtDimensionArray [ ] = { 1 , 1 , 1000 , 1000 , 2 , 20 } ; static const real_T
-rtcapiStoredFloats [ ] = { 0.04 , 0.0 } ; static const rtwCAPI_FixPtMap
+rtcapiStoredFloats [ ] = { 0.2 , 0.0 } ; static const rtwCAPI_FixPtMap
 rtFixPtMap [ ] = { { ( NULL ) , ( NULL ) , rtwCAPI_FIX_RESERVED , 0 , 0 , 0 }
 , } ; static const rtwCAPI_SampleTimeMap rtSampleTimeMap [ ] = { { ( const
 void * ) & rtcapiStoredFloats [ 0 ] , ( const void * ) & rtcapiStoredFloats [
@@ -119,8 +119,8 @@ void * ) & rtcapiStoredFloats [ 0 ] , ( const void * ) & rtcapiStoredFloats [
 rtBlockSignals , 16 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters ,
 12 , rtModelParameters , 8 } , { ( NULL ) , 0 } , { rtDataTypeMap ,
 rtDimensionMap , rtFixPtMap , rtElementMap , rtSampleTimeMap ,
-rtDimensionArray } , "float" , { 3880949861U , 2926028020U , 2609577865U ,
-1771568911U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
+rtDimensionArray } , "float" , { 3470230764U , 490784607U , 789373833U ,
+339123673U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 Simulation_CircularSensor_GetCAPIStaticMap ( void ) { return & mmiStatic ; }
 #ifndef HOST_CAPI_BUILD
 void Simulation_CircularSensor_InitializeDataMapInfo ( void ) {

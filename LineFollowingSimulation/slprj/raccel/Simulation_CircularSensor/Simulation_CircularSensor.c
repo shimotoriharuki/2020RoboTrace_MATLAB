@@ -100,7 +100,7 @@ externalInputIsInDatasetFormat ) { } } { int_T dimensions [ 1 ] = { 3 } ;
 rtDW . af1vwlxkji . LoggedData = rt_CreateLogVar ( ssGetRTWLogInfo ( rtS ) ,
 ssGetTStart ( rtS ) , ssGetTFinal ( rtS ) , 0.0 , ( & ssGetErrorStatus ( rtS
 ) ) , "RobotPos" , SS_DOUBLE , 0 , 0 , 0 , 3 , 1 , dimensions , NO_LOGVALDIMS
-, ( NULL ) , ( NULL ) , 0 , 1 , 0.04 , 1 ) ; if ( rtDW . af1vwlxkji .
+, ( NULL ) , ( NULL ) , 0 , 1 , 0.2 , 1 ) ; if ( rtDW . af1vwlxkji .
 LoggedData == ( NULL ) ) return ; } { static int_T rt_ToWksWidths [ ] = { 40
 } ; static int_T rt_ToWksNumDimensions [ ] = { 2 } ; static int_T
 rt_ToWksDimensions [ ] = { 2 , 20 } ; static boolean_T rt_ToWksIsVarDims [ ]
@@ -120,7 +120,7 @@ NULL ) } ; static const char_T rt_ToWksBlockName [ ] =
 rtDW . orevitufji [ 0 ] ; rt_ToWksCurrSigDims [ 1 ] = & rtDW . orevitufji [ 1
 ] ; rtDW . ncyke2zkxu . LoggedData = rt_CreateStructLogVar ( ssGetRTWLogInfo
 ( rtS ) , ssGetTStart ( rtS ) , ssGetTFinal ( rtS ) , 0.0 , ( &
-ssGetErrorStatus ( rtS ) ) , "SensPos" , 0 , 0 , 1 , 0.04 , &
+ssGetErrorStatus ( rtS ) ) , "SensPos" , 0 , 0 , 1 , 0.2 , &
 rt_ToWksSignalInfo , rt_ToWksBlockName ) ; if ( rtDW . ncyke2zkxu .
 LoggedData == ( NULL ) ) return ; } for ( i = 0 ; i < 1000000 ; i ++ ) { rtDW
 . ob2ec14xe1 [ i ] = rtP . DataStoreMemory1_InitialValue ; } rtDW .
@@ -281,11 +281,11 @@ rtS , 0 ) ; ssSetNumU ( rtS , 0 ) ; ssSetDirectFeedThrough ( rtS , 0 ) ;
 ssSetNumSampleTimes ( rtS , 2 ) ; ssSetNumBlocks ( rtS , 38 ) ;
 ssSetNumBlockIO ( rtS , 15 ) ; ssSetNumBlockParams ( rtS , 1000019 ) ; } void
 MdlInitializeSampleTimes ( void ) { ssSetSampleTime ( rtS , 0 , 0.0 ) ;
-ssSetSampleTime ( rtS , 1 , 0.04 ) ; ssSetOffsetTime ( rtS , 0 , 1.0 ) ;
+ssSetSampleTime ( rtS , 1 , 0.2 ) ; ssSetOffsetTime ( rtS , 0 , 1.0 ) ;
 ssSetOffsetTime ( rtS , 1 , 0.0 ) ; } void raccel_set_checksum ( ) {
-ssSetChecksumVal ( rtS , 0 , 3880949861U ) ; ssSetChecksumVal ( rtS , 1 ,
-2926028020U ) ; ssSetChecksumVal ( rtS , 2 , 2609577865U ) ; ssSetChecksumVal
-( rtS , 3 , 1771568911U ) ; }
+ssSetChecksumVal ( rtS , 0 , 3470230764U ) ; ssSetChecksumVal ( rtS , 1 ,
+490784607U ) ; ssSetChecksumVal ( rtS , 2 , 789373833U ) ; ssSetChecksumVal (
+rtS , 3 , 339123673U ) ; }
 #if defined(_MSC_VER)
 #pragma optimize( "", off )
 #endif
@@ -321,7 +321,7 @@ Simulation_CircularSensor_InitializeDataMapInfo ( ) ;
 ssSetIsRapidAcceleratorActive ( rtS , true ) ; ssSetRootSS ( rtS , rtS ) ;
 ssSetVersion ( rtS , SIMSTRUCT_VERSION_LEVEL2 ) ; ssSetModelName ( rtS ,
 "Simulation_CircularSensor" ) ; ssSetPath ( rtS , "Simulation_CircularSensor"
-) ; ssSetTStart ( rtS , 0.0 ) ; ssSetTFinal ( rtS , 2.0 ) ; { static
+) ; ssSetTStart ( rtS , 0.0 ) ; ssSetTFinal ( rtS , 10.0 ) ; { static
 RTWLogInfo rt_DataLoggingInfo ; rt_DataLoggingInfo . loggingInterval = NULL ;
 ssSetRTWLogInfo ( rtS , & rt_DataLoggingInfo ) ; } { { static int_T
 rt_LoggedStateWidths [ ] = { 1 , 1 , 1 } ; static int_T
@@ -363,9 +363,9 @@ ssGetRTWLogInfo ( rtS ) , 0 ) ; rtliSetLogDecimation ( ssGetRTWLogInfo ( rtS
 ) , 1 ) ; rtliSetLogY ( ssGetRTWLogInfo ( rtS ) , "" ) ;
 rtliSetLogYSignalInfo ( ssGetRTWLogInfo ( rtS ) , ( NULL ) ) ;
 rtliSetLogYSignalPtrs ( ssGetRTWLogInfo ( rtS ) , ( NULL ) ) ; } { static
-ssSolverInfo slvrInfo ; ssSetStepSize ( rtS , 0.04 ) ; ssSetMinStepSize ( rtS
+ssSolverInfo slvrInfo ; ssSetStepSize ( rtS , 0.2 ) ; ssSetMinStepSize ( rtS
 , 0.0 ) ; ssSetMaxNumMinSteps ( rtS , - 1 ) ; ssSetMinStepViolatedError ( rtS
-, 0 ) ; ssSetMaxStepSize ( rtS , 0.04 ) ; ssSetSolverMaxOrder ( rtS , - 1 ) ;
+, 0 ) ; ssSetMaxStepSize ( rtS , 0.2 ) ; ssSetSolverMaxOrder ( rtS , - 1 ) ;
 ssSetSolverRefineFactor ( rtS , 1 ) ; ssSetOutputTimes ( rtS , ( NULL ) ) ;
 ssSetNumOutputTimes ( rtS , 0 ) ; ssSetOutputTimesOnly ( rtS , 0 ) ;
 ssSetOutputTimesIndex ( rtS , 0 ) ; ssSetZCCacheNeedsReset ( rtS , 0 ) ;
@@ -382,8 +382,8 @@ ssSetModelLogDataIfInInterval ( rtS , rt_UpdateTXXFYLogVars ) ;
 ssSetModelUpdate ( rtS , MdlUpdate ) ; ssSetTNextTid ( rtS , INT_MIN ) ;
 ssSetTNext ( rtS , rtMinusInf ) ; ssSetSolverNeedsReset ( rtS ) ;
 ssSetNumNonsampledZCs ( rtS , 0 ) ; } ssSetChecksumVal ( rtS , 0 ,
-3880949861U ) ; ssSetChecksumVal ( rtS , 1 , 2926028020U ) ; ssSetChecksumVal
-( rtS , 2 , 2609577865U ) ; ssSetChecksumVal ( rtS , 3 , 1771568911U ) ; {
+3470230764U ) ; ssSetChecksumVal ( rtS , 1 , 490784607U ) ; ssSetChecksumVal
+( rtS , 2 , 789373833U ) ; ssSetChecksumVal ( rtS , 3 , 339123673U ) ; {
 static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE ; static
 RTWExtModeInfo rt_ExtModeInfo ; static const sysRanDType * systemRan [ 6 ] ;
 gblRTWExtModeInfo = & rt_ExtModeInfo ; ssSetRTWExtModeInfo ( rtS , &
