@@ -10,8 +10,8 @@ cmd_vel_pub = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
 cmd_vel_msg = rosmessage(cmd_vel_pub);
 
 %% メッセージをパプリッシュする
-cmd_vel_msg.Linear.X = -0.5;
-cmd_vel_msg.Angular.Z = 0.5;
+cmd_vel_msg.Linear.X = 1;
+cmd_vel_msg.Angular.Z = 1;
 
 send(cmd_vel_pub, cmd_vel_msg);
 
@@ -37,7 +37,8 @@ pose
 
 
 %% リスポーン
-testclient = rossvcclient('/gazebo/reset_world');
+testclient = rossvcclient('/gazebo/reset_simulation');
+% testclient = rossvcclient('/gazebo/reset_world');
 testreq = rosmessage(testclient);
 testresp = call(testclient,testreq,'Timeout',3);
 
