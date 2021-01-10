@@ -18,11 +18,9 @@ send(cmd_vel_pub, cmd_vel_msg);
 %% サブスクライバーを作成する
 
 close all
-%global tftree 
 poses = 0;
 
 odom_sub = rossubscriber('/odom', @odomCallback);
-%odom_tf = rossubscriber('/tf', @tfCallback);
 pause(1);
 
 

@@ -1,44 +1,29 @@
-%% イニシャライズa
+%% イニシャライズ
 clear
 rosshutdown;
 % rosinit("192.168.0.30", 11311);
 rosinit("192.168.0.58", 11311);
-
-%% メッセージを作成する
-global cmd_vel_pub;
-global cmd_vel_msg;
-[cmd_vel_pub, vel_msg] = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
-cmd_vel_msg = rosmessage(cmd_vel_pub);
-
-vel_msg.Linear.X = 0.5;
-vel_msg.Angular.Z = -0.5;
-
+disp('------------初期化完了---------------');
 
 %% rosrate
-desiredRate = 20;
+desiredRate = 20; %Hz
 rate = robotics.Rate(desiredRate);
 rate.OverrunAction = 'drop';
 
+t = 0;
 reset(rate)
 while rate.TotalElapsedTime < 5
-   send(cmd_vel_pub, vel_msg)
-   waitfor(rate);
+    linear = 0.5;
+    angular = 0.2 + sin(t);
+    
+    publishVelocity(linear, angular);
+    waitfor(rate);
+    
+    t = t + 0.2;
+    if t >= 2 * pi
+        t = 0;
+    end
 end
 
-vel_msg.Linear.X = 0;
-vel_msg.Angular.Z = 0;
-send(cmd_vel_pub, vel_msg)
-%% タイマースタート
-%{
-t = timer;
-t.TimerFcn = @cb_publish_velocity;
-t.Period = 0.1;
-t.ExecutionMode = 'fixedDelay';
-
-start(t)
-
-
-%% タイマー削除
-delete(t)
-%}
-
+% Robot runnning stop
+publishVelocity(0.0, 0.0);
