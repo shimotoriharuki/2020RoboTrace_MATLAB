@@ -20,7 +20,9 @@ send(cmd_vel_pub, cmd_vel_msg);
 close all
 poses = 0;
 
-odom_sub = rossubscriber('/odom', @odomCallback);
+% odom_sub = rossubscriber('/odom', @odomCallback);
+odom_sub = rossubscriber('/odom');
+
 pause(1);
 
 

@@ -1,8 +1,7 @@
-function publishVelocity(linear_vel, angular_vel)
-   [cmd_vel_pub, vel_msg] = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
+function publishVelocity(pub, msg, linear_vel, angular_vel)
    
-   vel_msg.Linear.X = linear_vel;
-   vel_msg.Angular.Z = angular_vel;
+   msg.Linear.X = linear_vel;
+   msg.Angular.Z = angular_vel;
     
-   send(cmd_vel_pub, vel_msg);
+   send(pub, msg);
 end

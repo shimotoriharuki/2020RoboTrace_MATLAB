@@ -1,6 +1,0 @@
-function publishVelocity(pub, msg)
-    [cmd_vel_pub, vel_msg] = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
-    cmd_vel_pub = pub;
-    e
-    send(pub, vel_msg);
-end
