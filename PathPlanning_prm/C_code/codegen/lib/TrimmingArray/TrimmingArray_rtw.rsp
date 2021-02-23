@@ -1,0 +1,9 @@
+TrimmingArray.o
+TrimmingArray_data.o
+TrimmingArray_emxAPI.o
+TrimmingArray_emxutil.o
+TrimmingArray_initialize.o
+TrimmingArray_terminate.o
+rtGetInf.o
+rtGetNaN.o
+rt_nonfinite.o

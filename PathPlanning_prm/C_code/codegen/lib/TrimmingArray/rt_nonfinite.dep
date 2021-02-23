@@ -1,0 +1,8 @@
+rt_nonfinite.o: \
+ C:/Users/robot/Documents/MATLAB/2020_RoboTrace/PathPlanning/C_code/codegen/lib/TrimmingArray/rt_nonfinite.c \
+ C:/Users/robot/Documents/MATLAB/2020_RoboTrace/PathPlanning/C_code/codegen/lib/TrimmingArray/rt_nonfinite.h \
+ C:/Users/robot/Documents/MATLAB/2020_RoboTrace/PathPlanning/C_code/codegen/lib/TrimmingArray/rtwtypes.h
+
+C:/Users/robot/Documents/MATLAB/2020_RoboTrace/PathPlanning/C_code/codegen/lib/TrimmingArray/rt_nonfinite.h:
+
+C:/Users/robot/Documents/MATLAB/2020_RoboTrace/PathPlanning/C_code/codegen/lib/TrimmingArray/rtwtypes.h:
