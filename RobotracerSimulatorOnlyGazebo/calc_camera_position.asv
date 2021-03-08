@@ -1,5 +1,0 @@
-center_position = [0.15; 0]; % [x; y]
-sensor_num = 7;
-angle = 120; % deg
-thetas = []
-R = [];
